@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:background="@drawable/instructions_border">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="63dp"
+        android:shadowColor="#5C5300"
+        android:text="Instructions"
+        android:textAlignment="center"
+        android:textColor="@color/Bronze_Olive"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="301dp"
+        android:layout_height="199dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="1dp"
+        android:paddingStart="5dp"
+        android:paddingLeft="1dp"
+        android:shadowColor="#5C5300"
+        android:text="- Note that every question has its level of difficulty so it has its own money value. \n- You can quit game at any time. \n- If you do not know the answer, you can use one of the helping methods but every one can only be used once:\n     * to delete 2 of the answers.\n     * change the question.\n- You lose as long as you do not score the Million. "
+        android:textAlignment="inherit"
+        android:textColorHighlight="#009688"
+        android:textSize="15sp" />
+
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="mainmenu">mainmenu</string>
+    <string name="instructions">Instructions</string>
+    <string name="quit">Quit</string>
+    <string name="new_game">New Game</string>
+</resources>
