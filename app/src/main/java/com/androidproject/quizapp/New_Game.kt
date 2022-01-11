@@ -1,20 +1,16 @@
 package com.androidproject.quizapp
 
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.androidproject.quizapp.databinding.ActivityMainBinding
+//import com.androidproject.quizapp.Constants.correctAnswer
 import com.androidproject.quizapp.databinding.ActivityNewGameBinding
-import kotlin.system.exitProcess
 
 class New_Game : AppCompatActivity() , View.OnClickListener{
     private lateinit var binding: ActivityNewGameBinding
@@ -23,6 +19,9 @@ class New_Game : AppCompatActivity() , View.OnClickListener{
     private var QuestionsList: ArrayList<Question> ? = null
     private var SelectedAnswerIndex : Int = 0
     private var CorrectAnswers : Int =0
+    private var currentQ : Int =0
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,23 +36,51 @@ class New_Game : AppCompatActivity() , View.OnClickListener{
 
         setQuestions()
 
+        //print(correctAnswer)
+
         binding.optionone.setOnClickListener(this)
         binding.optiontwo.setOnClickListener(this)
         binding.optionthree.setOnClickListener(this)
         binding.optionfour.setOnClickListener(this)
         binding.btnNext.setOnClickListener(this)
         binding.btnExit.setOnClickListener(this)
-
-
-
+        binding.minustwo.setOnClickListener{
+            if(binding.minustwo.isClickable==true){
+                currentQ++
+                deletetwo(binding.optionone,binding.optiontwo,binding.optionthree,binding.optionfour)
+            }
+        }
     }
+    private fun deletetwo (optionone : TextView, optiontwo : TextView, optionthree : TextView, optionfour : TextView) {
+        var deleteQ : Int = 0;
+        val question2 = QuestionsList?.get(currentQ)
+
+        //val corr = correctAnswer.toInt();
+        val answers = ArrayList<TextView>()
+        answers.add(0,binding.optionone)
+        answers.add(1,binding.optiontwo)
+        answers.add(2,binding.optionthree)
+        answers.add(3,binding.optionfour)
+        for (answer in answers){
+            if (answers.indexOf(answer)== question2!!.correctAnswer){
+                answer.isClickable=false;
+                deleteQ++;
+            }
+            if (deleteQ ==2) {break}
+        }
+        markButtonDisable(binding.minustwo)
+    }
+    fun markButtonDisable(button: Button) {
+        button?.isEnabled = false
+        button?.setTextColor(getApplication().getResources().getColor(R.color.white))
+        button?.setBackgroundColor(Color.DKGRAY)
+    }
+
     private fun setQuestions()
     {
-
         enableButtons(binding.optionone,binding.optiontwo,binding.optionthree,binding.optionfour)
         val question = QuestionsList!![CurrentPostion-1]
         defaultAnswersView()
-
 
         binding.progress.text = "$CurrentPostion" + "/" +15
         binding.question.text = question!!.question
@@ -62,6 +89,8 @@ class New_Game : AppCompatActivity() , View.OnClickListener{
         binding.optionthree.text = question.optionThree
         binding.optionfour.text = question.optionFour
     }
+
+
     fun disableButtons(optionone : TextView, optiontwo : TextView,optionthree : TextView, optionfour : TextView)
     {
         optionone.isClickable = false
@@ -96,6 +125,7 @@ class New_Game : AppCompatActivity() , View.OnClickListener{
     override fun onClick(v: View?) {
         when(v?.id)
         {
+
             R.id.optionone -> {
                 selectedAnswerView(binding.optionone,1)
             }
@@ -160,6 +190,7 @@ class New_Game : AppCompatActivity() , View.OnClickListener{
         }
     }
 
+
     private fun AnswerView(answer:Int, drwableView: Int)
     {
         when(answer)
@@ -192,4 +223,6 @@ class New_Game : AppCompatActivity() , View.OnClickListener{
         tv.background = ContextCompat.getDrawable(this,R.drawable.selected_textview)
     }
 
+
 }
+

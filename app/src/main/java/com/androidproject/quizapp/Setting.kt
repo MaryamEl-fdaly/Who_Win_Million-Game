@@ -1,21 +1,15 @@
 package com.androidproject.quizapp
 
-import android.content.Context
 import android.content.Intent
-import android.media.AudioManager
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.SeekBar
-import android.widget.Toast
-import com.androidproject.quizapp.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.androidproject.quizapp.databinding.ActivitySettingBinding
-import java.io.IOException
 
 class Setting : AppCompatActivity() {
     private lateinit var binding: ActivitySettingBinding
-    var mMediaPlayer : MediaPlayer? = null
+    private var mMediaPlayer : MediaPlayer? = null
 
     //lateinit var SeekBarVolume : SeekBar
    // lateinit var audiomanager: AudioManager
@@ -27,11 +21,11 @@ class Setting : AppCompatActivity() {
 
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
-        binding.btnMusic.setOnClickListener{
+        /*binding.btnMusic.setOnClickListener{
             playSound()
-        }
+        }*/
         binding.btnPausemusic.setOnClickListener{
-            pauseSound()
+            stopSound()
         }
         binding.btnExit.setOnClickListener{
             val i: Intent = Intent(this,MainActivity::class.java)
@@ -45,7 +39,7 @@ class Setting : AppCompatActivity() {
     }
 
 
-    fun playSound() {
+    /*fun playSound() {
         if (mMediaPlayer == null) {
             mMediaPlayer = MediaPlayer.create(this, R.raw.million)
             mMediaPlayer!!.isLooping = true
@@ -54,21 +48,16 @@ class Setting : AppCompatActivity() {
     }
     fun pauseSound() {
         if (mMediaPlayer != null && mMediaPlayer!!.isPlaying) mMediaPlayer!!.pause()
+    }*/
+    private fun stopSound() {
+        mMediaPlayer?.pause();
     }
 
-    fun stopSound() {
-        if (mMediaPlayer != null) {
-            mMediaPlayer!!.stop()
-            mMediaPlayer!!.release()
-            mMediaPlayer = null
-        }
-    }
-
-    override fun onStop() {
+    /*override fun onStop() {
         super.onStop()
         if (mMediaPlayer != null) {
             mMediaPlayer!!.release()
             mMediaPlayer = null
         }
-}
+}*/
 }
