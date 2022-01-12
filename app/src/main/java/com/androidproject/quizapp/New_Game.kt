@@ -1,5 +1,6 @@
 package com.androidproject.quizapp
 
+//import com.androidproject.quizapp.Constants.correctAnswer
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
@@ -9,7 +10,6 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-//import com.androidproject.quizapp.Constants.correctAnswer
 import com.androidproject.quizapp.databinding.ActivityNewGameBinding
 
 class New_Game : AppCompatActivity() , View.OnClickListener{
@@ -53,7 +53,7 @@ class New_Game : AppCompatActivity() , View.OnClickListener{
     }
     private fun deletetwo (optionone : TextView, optiontwo : TextView, optionthree : TextView, optionfour : TextView) {
         var deleteQ : Int = 0;
-        val question2 = QuestionsList?.get(currentQ)
+        val question2 = QuestionsList?.get(CurrentPostion-1)
 
         //val corr = correctAnswer.toInt();
         val answers = ArrayList<TextView>()
@@ -62,13 +62,26 @@ class New_Game : AppCompatActivity() , View.OnClickListener{
         answers.add(2,binding.optionthree)
         answers.add(3,binding.optionfour)
         for (answer in answers){
-            if (answers.indexOf(answer)== question2!!.correctAnswer){
+            if (answers.indexOf(answer)+1!= question2!!.correctAnswer){
                 answer.isClickable=false;
+                if(answers.indexOf(answer)==0)
+                { markAnswerDisable(binding.optionone) }
+                else if(answers.indexOf(answer)==1)
+                { markAnswerDisable(binding.optiontwo) }
+                else if(answers.indexOf(answer)==2)
+                { markAnswerDisable(binding.optionthree) }
+                else if(answers.indexOf(answer)==3)
+                { markAnswerDisable(binding.optionfour) }
                 deleteQ++;
             }
             if (deleteQ ==2) {break}
         }
         markButtonDisable(binding.minustwo)
+    }
+    fun markAnswerDisable(ans: TextView) {
+        ans.isClickable = false
+        ans?.setTextColor(getApplication().getResources().getColor(R.color.black))
+        ans?.setBackgroundColor(Color.DKGRAY)
     }
     fun markButtonDisable(button: Button) {
         button?.isEnabled = false

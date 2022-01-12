@@ -42,6 +42,11 @@ class MainActivity : AppCompatActivity() {
 
             dialog.show(supportFragmentManager,"customDialog")
         }
+        binding.btnLanguage.setOnClickListener{
+            var dialog = languagecustomdialog()
+
+            dialog.show(supportFragmentManager,"customDialog")
+        }
         binding.btnSetting.setOnClickListener{
                 val ii: Intent = Intent(this,Setting::class.java)
                 startActivity(ii)

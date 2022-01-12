@@ -4,4 +4,7 @@
     <string name="instructions">Instructions</string>
     <string name="quit">Quit</string>
     <string name="new_game">New Game</string>
+    <string name="language">Language</string>
+    <string name="deutsch">Deutsch</string>
+    <string name="english">English</string>
 </resources>
