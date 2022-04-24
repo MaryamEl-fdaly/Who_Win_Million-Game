@@ -6,6 +6,5 @@ data class Question (
     val optionTwo: String,
     val optionThree: String,
     val optionFour: String,
-    val Answervalue: Int,
     val correctAnswer: Int
     )

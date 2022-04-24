@@ -46,30 +46,34 @@
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
 
-    <ImageButton
-        android:id="@+id/btn_money"
+    <TextView
+        android:id="@+id/money"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:background="#fff"
-        android:src="@drawable/btnmoney"
+        android:background="@drawable/monvalue"
+        android:paddingLeft="2dp"
+        android:paddingTop="15dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="95dp"
         android:width="300dp"
-        android:height="215dp"
+        android:height="200dp"
         android:background="@drawable/custom_textview"
         android:fontFamily="@font/puritan_bold"
         android:foregroundTint="#000000"
         android:paddingHorizontal="20dp"
-        android:paddingTop="80dp"
+        android:paddingLeft="55dp"
+        android:paddingTop="55dp"
         android:text="What is this symbol for.."
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="#5C5300"
@@ -97,21 +101,20 @@
         tools:text="0/15" />
 
 
-
     <TextView
         android:id="@+id/optionone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:width="300dp"
-        android:height="50dp"
+        android:height="45dp"
         android:background="@drawable/custom_textviewans"
         android:fontFamily="@font/puritan_bold"
         android:paddingLeft="12dp"
         android:paddingTop="7dp"
         android:shadowColor="#5C5300"
         android:textColor="#5C5300"
-        android:textSize="32sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/optiontwo"
         app:layout_constraintEnd_toEndOf="@+id/optiontwo"
@@ -127,14 +130,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:width="300dp"
-        android:height="50dp"
+        android:height="45dp"
         android:background="@drawable/custom_textviewans"
         android:fontFamily="@font/puritan_bold"
         android:paddingLeft="12dp"
         android:paddingTop="7dp"
         android:shadowColor="#5C5300"
         android:textColor="#5C5300"
-        android:textSize="32sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/optionfour"
         app:layout_constraintEnd_toEndOf="@+id/optionfour"
@@ -150,14 +153,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
         android:width="300dp"
-        android:height="50dp"
+        android:height="45dp"
         android:background="@drawable/custom_textviewans"
         android:fontFamily="@font/puritan_bold"
         android:paddingLeft="12dp"
         android:paddingTop="7dp"
         android:shadowColor="#5C5300"
         android:textColor="#5C5300"
-        android:textSize="32sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -171,7 +174,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:width="300dp"
-        android:height="50dp"
+        android:height="45dp"
         android:background="@drawable/custom_textviewans"
         android:fontFamily="@font/puritan_bold"
         android:gravity="left"
@@ -179,7 +182,7 @@
         android:paddingTop="7dp"
         android:shadowColor="#5C5300"
         android:textColor="#5C5300"
-        android:textSize="32sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/optionthree"
         app:layout_constraintEnd_toEndOf="@+id/optionthree"
@@ -192,10 +195,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
         android:width="85dp"
-        android:height="55dp"
+        android:height="45dp"
         android:background="@drawable/custom_button"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
@@ -207,17 +210,17 @@
         app:layout_constraintBottom_toTopOf="@+id/optionone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question"
-        app:layout_constraintVertical_bias="0.135" />
+        app:layout_constraintVertical_bias="0.414" />
 
     <Button
         android:id="@+id/refresh"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="70dp"
         android:layout_marginBottom="15dp"
         android:width="85dp"
-        android:height="55dp"
+        android:height="45dp"
         android:background="@drawable/custom_button"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
@@ -229,7 +232,7 @@
         app:layout_constraintBottom_toTopOf="@+id/optionone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question"
-        app:layout_constraintVertical_bias="0.142"
+        app:layout_constraintVertical_bias="0.426"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -244,5 +247,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

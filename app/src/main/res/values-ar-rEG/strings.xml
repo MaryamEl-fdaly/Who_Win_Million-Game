@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuizApp</string>
+
+    <string name="mainmenu">القائمة الرئيسية</string>
+
+    <string name="instructions">التعليمات</string>
+
+    <string name="quit">خروج</string>
+
+    <string name="new_game">لعبة جديدة</string>
+
+    <string name="language">اللغه</string>
+
+    <string name="deutsch">الألمانية</string>
+
+    <string name="english">الأنجليزية</string>
+</resources>

@@ -1,5 +1,6 @@
 package com.androidproject.quizapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +9,9 @@ import androidx.fragment.app.DialogFragment
 
 class customdialogfragment: DialogFragment() {
 
+
     override fun onCreateView(
+
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
